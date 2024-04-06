@@ -1,3 +1,6 @@
+import 'package:auth_app/constants.dart';
+import 'package:auth_app/view/screens/auth_Screens/sign_in_Screen.dart';
+import 'package:auth_app/view/widgets/mytext.dart';
 import 'package:flutter/material.dart';
 
 class Welcome_Screen extends StatelessWidget {
@@ -5,6 +8,55 @@ class Welcome_Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      backgroundColor: primarycolor,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12),
+        child: Column(
+          children: [
+            Image.asset("assets/icons/wise.png"),
+            Mytext(
+              text: "Welcom to EcoWise",
+              bold: true,
+              title: true,
+              color: Colors.white,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Mytext(
+              color: Colors.white,
+              text:
+                  " your gide to optimize and decrease \n      you re energy use in the house",
+            ),
+            SizedBox(
+              height: 100,
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SigninScreen(),
+                        ));
+                  },
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    backgroundColor: secondrycolor,
+                  ),
+                  child: Mytext(
+                    bold: true,
+                    color: Colors.white,
+                    text: "get started >|",
+                  )),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

@@ -1,2 +1,4 @@
-const String primarycolor = "4C7380";
-const String secendrycolor = "A65F3E";
+import 'package:flutter/material.dart';
+
+const Color primarycolor = Color(0xFF4c7380);
+const Color secondrycolor = Color(0xFFA65F3E);
