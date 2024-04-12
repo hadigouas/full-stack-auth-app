@@ -50,67 +50,69 @@ class _loginScreenState extends State<loginScreen> {
               child: ClipPath(
                 clipper: SecondPentagonClipper(),
                 child: Container(
-                  padding: EdgeInsets.only(top: 110),
+                  padding: const EdgeInsets.only(top: 110),
                   color: Colors.white,
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 12),
+                    padding: const EdgeInsets.symmetric(horizontal: 12),
                     child: Form(
                       key: key,
                       child: Column(
                         children: [
-                          Mytext(
+                          const Mytext(
                             text: "login",
                             title: true,
                             bold: true,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           TextFormField(
                             controller: emailcontroller,
                             validator: (value) {
-                              if (value!.isEmpty || value == null) {
+                              if (value!.isEmpty) {
                                 return "type a valid email";
                               }
+                              return null;
                             },
                             decoration: InputDecoration(
-                              border: OutlineInputBorder(),
+                              border: const OutlineInputBorder(),
                               fillColor: Colors.grey[400],
-                              suffixIcon: Icon(Icons.email),
+                              suffixIcon: const Icon(Icons.email),
                               filled: true,
-                              label: Mytext(
+                              label: const Mytext(
                                 text: "email",
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           TextFormField(
                             controller: passwordcontroller,
                             validator: (value) {
-                              if (value!.isEmpty || value == null) {
+                              if (value!.isEmpty) {
                                 return "type a valid password";
                               } else if (value.length < 8)
                                 return "the passowrd must containt more then 8 characters";
+                              return null;
                             },
                             decoration: InputDecoration(
-                              border: OutlineInputBorder(),
+                              border: const OutlineInputBorder(),
                               fillColor: Colors.grey[400],
-                              suffixIcon: Icon(Icons.password_outlined),
+                              suffixIcon: const Icon(Icons.password_outlined),
                               filled: true,
-                              label: Mytext(
+                              label: const Mytext(
                                 text: "password",
                               ),
                             ),
                           ),
-                          Align(
+                          const Align(
                             alignment: Alignment.centerRight,
                             child: Mytext(text: "forget?"),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           SizedBox(
@@ -129,20 +131,20 @@ class _loginScreenState extends State<loginScreen> {
                                   ),
                                   backgroundColor: secondrycolor,
                                 ),
-                                child: Mytext(
+                                child: const Mytext(
                                   bold: true,
                                   color: Colors.white,
                                   text: "sign in >|",
                                 )),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
-                          Align(
+                          const Align(
                             alignment: Alignment.center,
                             child: Mytext(text: "Or"),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           Row(
@@ -155,9 +157,9 @@ class _loginScreenState extends State<loginScreen> {
                                         shape: RoundedRectangleBorder(
                                             borderRadius:
                                                 BorderRadius.circular(5)),
-                                        backgroundColor: Color(0xffF1F5F9)),
+                                        backgroundColor: const Color(0xffF1F5F9)),
                                     onPressed: () {},
-                                    child: Mytext(
+                                    child: const Mytext(
                                       text: "Google",
                                     )),
                               ),
@@ -168,9 +170,9 @@ class _loginScreenState extends State<loginScreen> {
                                         shape: RoundedRectangleBorder(
                                             borderRadius:
                                                 BorderRadius.circular(5)),
-                                        backgroundColor: Color(0xffF1F5F9)),
+                                        backgroundColor: const Color(0xffF1F5F9)),
                                     onPressed: () {},
-                                    child: Mytext(
+                                    child: const Mytext(
                                       text: "Facbook",
                                     )),
                               )
@@ -179,7 +181,7 @@ class _loginScreenState extends State<loginScreen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Align(
+                              const Align(
                                 alignment: Alignment.center,
                                 child: Mytext(text: "Don't have account"),
                               ),
@@ -188,10 +190,10 @@ class _loginScreenState extends State<loginScreen> {
                                     Navigator.of(context).push(PageRouteBuilder(
                                       pageBuilder: (context, animation,
                                               secondaryAnimation) =>
-                                          SigninScreen(),
+                                          const SigninScreen(),
                                       transitionsBuilder: (context, animation,
                                           secondaryAnimation, child) {
-                                        var begin = Offset(1.0, 0.0);
+                                        var begin = const Offset(1.0, 0.0);
                                         var end = Offset.zero;
                                         var curve = Curves.easeInOut;
                                         var tween = Tween(
@@ -206,7 +208,7 @@ class _loginScreenState extends State<loginScreen> {
                                       },
                                     ));
                                   },
-                                  child: Mytext(
+                                  child: const Mytext(
                                     text: "sing in",
                                     bold: true,
                                   ))

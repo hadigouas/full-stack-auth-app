@@ -15,21 +15,21 @@ class Welcome_Screen extends StatelessWidget {
         child: Column(
           children: [
             Image.asset("assets/icons/wise.png"),
-            Mytext(
+            const Mytext(
               text: "Welcom to EcoWise",
               bold: true,
               title: true,
               color: Colors.white,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Mytext(
+            const Mytext(
               color: Colors.white,
               text:
                   " your gide to optimize and decrease \n      you re energy use in the house",
             ),
-            SizedBox(
+            const SizedBox(
               height: 100,
             ),
             SizedBox(
@@ -39,7 +39,7 @@ class Welcome_Screen extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SigninScreen(),
+                          builder: (context) => const SigninScreen(),
                         ));
                   },
                   style: ElevatedButton.styleFrom(
@@ -48,7 +48,7 @@ class Welcome_Screen extends StatelessWidget {
                     ),
                     backgroundColor: secondrycolor,
                   ),
-                  child: Mytext(
+                  child: const Mytext(
                     bold: true,
                     color: Colors.white,
                     text: "get started >|",

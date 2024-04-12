@@ -28,18 +28,19 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  bloc: ^8.1.4
   cupertino_icons: ^1.0.6
   dio: ^5.4.2+1
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.5
   google_fonts: ^6.2.1
+  pro_shered_preference: ^0.0.7
+  shared_preferences: ^2.2.2
 
 dev_dependencies:
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
+  bloc: ^8.1.4
+  flutter_bloc: ^8.1.5
   flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter

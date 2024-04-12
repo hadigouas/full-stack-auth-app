@@ -4,12 +4,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 class Mytext extends StatelessWidget {
   const Mytext({
-    Key? key,
+    super.key,
     required this.text,
     this.bold = false,
     this.title = false,
     this.color = Colors.black,
-  }) : super(key: key);
+  });
   final String text;
   final bool bold;
   final bool title;

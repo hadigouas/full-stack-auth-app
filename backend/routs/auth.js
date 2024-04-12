@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 const User = require("../schema/user_schema");
 const jwt=require("jsonwebtoken");
 const authrout = express.Router();
+const auth=require("../middlewares/auth_middleware");
 
 authrout.use(express.json());
 
@@ -40,9 +41,35 @@ authrout.post('/api/login',async(req,res)=>{
     res.status(500).json({error:error.message});
   }
 
+authrout.post("/tokenisvalid",async(req,res)=>{
+  try {
+    const token=req.header("token");
+  if(!token)res.json(false);
+const valid=await  jwt.verify(token,"passwordkey");
+if(!valid)res.json(false);
+const user= await User.findById(valid.id);
+        if(!user)return res.json(false);
+res.json(true);
+  } catch (error) {
+    res.status(500).json(error.message);
+  }
+})
+});
+
+authrout.get("/",auth,async(req,res)=>{
+
+try {
+  const user=await User.findById(req.user);
+  console.log(user);
+  res.json({...user._doc,token:req.token});
+} catch (error) {
+  res.status(500).json({error:error.message});
+}
+
 
 
 })
+
 
 
 

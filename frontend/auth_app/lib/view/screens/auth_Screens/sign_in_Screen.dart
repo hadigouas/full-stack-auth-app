@@ -3,8 +3,6 @@ import 'package:auth_app/services/authservecise/auth_services.dart';
 import 'package:auth_app/view/screens/auth_Screens/log_in_screen.dart';
 import 'package:auth_app/view/widgets/mytext.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 
 class SigninScreen extends StatefulWidget {
   const SigninScreen({super.key});
@@ -54,82 +52,84 @@ class _SigninScreenState extends State<SigninScreen> {
               child: ClipPath(
                 clipper: PentagonClipper(),
                 child: Container(
-                  padding: EdgeInsets.only(top: 40),
+                  padding: const EdgeInsets.only(top: 40),
                   color: Colors.white,
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 12),
+                    padding: const EdgeInsets.symmetric(horizontal: 12),
                     child: Form(
                       key: key,
                       child: Column(
                         children: [
-                          Mytext(
+                          const Mytext(
                             text: "Signin",
                             title: true,
                             bold: true,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           TextFormField(
                             controller: namecontorller,
                             decoration: InputDecoration(
-                              border: OutlineInputBorder(),
+                              border: const OutlineInputBorder(),
                               fillColor: Colors.grey[400],
-                              suffixIcon: Icon(Icons.person),
+                              suffixIcon: const Icon(Icons.person),
                               filled: true,
-                              label: Mytext(
+                              label: const Mytext(
                                 text: "name",
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           TextFormField(
                             controller: emailcontorller,
                             validator: (value) {
-                              if (value!.isEmpty || value == null) {
+                              if (value!.isEmpty) {
                                 return "type a valid email";
                               }
+                              return null;
                             },
                             decoration: InputDecoration(
-                              border: OutlineInputBorder(),
+                              border: const OutlineInputBorder(),
                               fillColor: Colors.grey[400],
-                              suffixIcon: Icon(Icons.email),
+                              suffixIcon: const Icon(Icons.email),
                               filled: true,
-                              label: Mytext(
+                              label: const Mytext(
                                 text: "email",
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           TextFormField(
                             controller: passowrdcontorller,
                             validator: (value) {
-                              if (value!.isEmpty || value == null) {
+                              if (value!.isEmpty) {
                                 return "type a valid password";
                               } else if (value.length < 8)
                                 return "the passowrd must containt more then 8 characters";
+                              return null;
                             },
                             decoration: InputDecoration(
-                              border: OutlineInputBorder(),
+                              border: const OutlineInputBorder(),
                               fillColor: Colors.grey[400],
-                              suffixIcon: Icon(Icons.password_outlined),
+                              suffixIcon: const Icon(Icons.password_outlined),
                               filled: true,
-                              label: Mytext(
+                              label: const Mytext(
                                 text: "password",
                               ),
                             ),
                           ),
-                          Align(
+                          const Align(
                             alignment: Alignment.centerRight,
                             child: Mytext(text: "forget?"),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           SizedBox(
@@ -149,20 +149,20 @@ class _SigninScreenState extends State<SigninScreen> {
                                   ),
                                   backgroundColor: secondrycolor,
                                 ),
-                                child: Mytext(
+                                child: const Mytext(
                                   bold: true,
                                   color: Colors.white,
                                   text: "sign in >|",
                                 )),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
-                          Align(
+                          const Align(
                             alignment: Alignment.center,
                             child: Mytext(text: "Or"),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           Row(
@@ -175,9 +175,9 @@ class _SigninScreenState extends State<SigninScreen> {
                                         shape: RoundedRectangleBorder(
                                             borderRadius:
                                                 BorderRadius.circular(5)),
-                                        backgroundColor: Color(0xffF1F5F9)),
+                                        backgroundColor: const Color(0xffF1F5F9)),
                                     onPressed: () {},
-                                    child: Mytext(
+                                    child: const Mytext(
                                       text: "Google",
                                     )),
                               ),
@@ -188,9 +188,9 @@ class _SigninScreenState extends State<SigninScreen> {
                                         shape: RoundedRectangleBorder(
                                             borderRadius:
                                                 BorderRadius.circular(5)),
-                                        backgroundColor: Color(0xffF1F5F9)),
+                                        backgroundColor: const Color(0xffF1F5F9)),
                                     onPressed: () {},
-                                    child: Mytext(
+                                    child: const Mytext(
                                       text: "Facbook",
                                     )),
                               )
@@ -199,7 +199,7 @@ class _SigninScreenState extends State<SigninScreen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Align(
+                              const Align(
                                 alignment: Alignment.center,
                                 child: Mytext(text: "have account"),
                               ),
@@ -208,10 +208,10 @@ class _SigninScreenState extends State<SigninScreen> {
                                     Navigator.of(context).push(PageRouteBuilder(
                                       pageBuilder: (context, animation,
                                               secondaryAnimation) =>
-                                          loginScreen(),
+                                          const loginScreen(),
                                       transitionsBuilder: (context, animation,
                                           secondaryAnimation, child) {
-                                        var begin = Offset(-1.0,
+                                        var begin = const Offset(-1.0,
                                             0.0); // Slide from left to right
                                         var end = Offset.zero;
                                         var curve = Curves.easeInOut;
@@ -227,7 +227,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                       },
                                     ));
                                   },
-                                  child: Mytext(
+                                  child: const Mytext(
                                     text: "login",
                                     bold: true,
                                   ))
