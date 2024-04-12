@@ -8,7 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthServices {
   static Dio dio = Dio(BaseOptions(
-    baseUrl: "http://172.17.0.1:3000",
+    baseUrl: "http://localhost:3000",
   ));
   static Future<ScaffoldFeatureController<SnackBar, SnackBarClosedReason>>
       signup(BuildContext context,
